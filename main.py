@@ -27,11 +27,8 @@ async def proxy_video(request: Request, download: bool = False):
     # 设置需要的请求头，模拟浏览器请求
     headers = {
         "Referer": "https://www.bilibili.com/",
-        "User-Agent": request.headers.get("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0"),
-        "Accept": request.headers.get("accept", "*/*"),
-        "Accept-Language": request.headers.get("accept-language", "en-US,en;q=0.5"),
-        "Accept-Encoding": request.headers.get("accept-encoding", "gzip, deflate, br"),
-        "Connection": "keep-alive",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
+                      "Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0",
     }
 
     # 发起对目标视频的请求
